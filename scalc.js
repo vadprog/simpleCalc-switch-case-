@@ -1,13 +1,15 @@
 
-function myfunction () {
+    
+function calculate () {
+
     let num1 = document.getElementById('num1').value;
     let num2 = document.getElementById('num2').value;
     let oper = document.getElementById('operation').value;
     let result
-        
+
     switch (oper) {
         case '+':
-            result = parsint(num1) + parsint (num2);
+            result = parseInt(num1) + parseInt(num2);
             break;
         case '-':
             result = num1 - num2;
@@ -26,12 +28,18 @@ function myfunction () {
             break;
     };
 
-    if (result != undefined) {
-           document.getElementById('result').value="Результат = " + result;
-    } else { 
-        result = 'Введите оператор';
-        document.getElementById('result').value = result;
-    }
 
+
+        if (result !== undefined) {    //  if (result) {}
+            document.getElementById('result').value= result;
+        } else { 
+            //result = 'Введите оператор';
+            document.getElementById('result').value = 'Введите оператор';
+        }
 
 };
+
+//btn.onclick = calculate; // old school
+//btn.onclick = printResult;
+
+btn.addEventListener("click", calculate);
