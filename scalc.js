@@ -4,6 +4,9 @@ function myfunction () {
     let num2 = document.getElementById('num2').value;
     let oper = document.getElementById('operation').value;
     let result
+        if (result == undefined) {
+            result = 'Введите оператор'
+        }
 
     switch (oper) {
         case '+':
@@ -25,6 +28,6 @@ function myfunction () {
         default:
             break;
     };
-    document.getElementById('result').value="Результат " + result;
+    document.getElementById('result').value="Результат = " + result;
 
 };
