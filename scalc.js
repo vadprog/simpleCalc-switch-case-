@@ -4,10 +4,7 @@ function myfunction () {
     let num2 = document.getElementById('num2').value;
     let oper = document.getElementById('operation').value;
     let result
-        if (result == undefined) {
-            result = 'Введите оператор'
-        }
-
+        
     switch (oper) {
         case '+':
             result = parsint(num1) + parsint (num2);
@@ -28,6 +25,13 @@ function myfunction () {
         default:
             break;
     };
-    document.getElementById('result').value="Результат = " + result;
+
+    if (result != undefined) {
+           document.getElementById('result').value="Результат = " + result;
+    } else { 
+        result = 'Введите оператор';
+        document.getElementById('result').value = result;
+    }
+
 
 };
