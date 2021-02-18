@@ -1,43 +1,45 @@
+function calculate () {
+    let num1 = document.getElementById('num1').value;
+    let num2 = document.getElementById('num2').value;
+    let oper = document.getElementById('operation').value;
+    
+    console.log(num1);
+    console.log(num2);
+    console.log(operation);
 
-let num1 = document.getElementById('num1').value;
-let num2 = document.getElementById('num2').value;
 
 // class calculator 
-class calcClass {
-    constructor(numberOne, numberTwo) {
-        this.numberOne = numberOne;
-        this.numberTwo = numberTwo;
-    }
+    class calcClass {
+        constructor(numberOne, numberTwo, operators) {
+            this.numberOne = numberOne;
+            this.numberTwo = numberTwo;
+            this.operators = operators;
+            
+        }
 
-    getSumm () {
-        return this.numberOne + this.numberTwo;
-    }
-    getMinus (){
-        return this.numberOne - this.numberTwo;
-    }
-    getDivide (){
-        return this.numberOne / this.numberTwo;
-    }
-    getMultiply(){
-        return this.numberOne * this.numberTwo;
-    }
-    
-}
+        getCalculate () {
+            return this.numberOne + this.operators + this.numberTwo;
+        }
+        
+        
+    };
 
-const newNumberSumm = new calcClass(1, 2); // it is working
+// const newNumberSumm = new calcClass(1, 2); // it is working
+const newNumberSumm = new calcClass(num1, num2, oper); // != it isnt working
 
-//const newNumberSumm = new calcClass(num1, num2); // != it isnt working
-console.log(newNumberSumm.numberOne);
-console.log(newNumberSumm.numberTwo);
-console.log(newNumberSumm.getSumm());
-console.log(newNumberSumm.getMinus());
-console.log(newNumberSumm.getDivide());
-console.log(newNumberSumm.getMultiply());
+document.getElementById('result').value = newNumberSumm.getCalculate();
+
+console.log(num1);
+console.log(num2);
+console.log(oper);
+console.log(newNumberSumm.getCalculate());
+
+};
 
 
-//btn.addEventListener("click", newNumberSumm.getSumm()); // != it isnt working
-btn.onclick = newNumberSumm.getMultiply();
-console.log(btn.onclick)
+btn.addEventListener("click", calculate);
+
+
 
 
 
