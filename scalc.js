@@ -1,7 +1,7 @@
 function calculate () {
     let num1 = document.getElementById('num1').value;
     let num2 = document.getElementById('num2').value;
-    let oper = document.getElementById('operation').value;
+    //let oper = document.getElementById('operation').value;
     
     console.log(num1);
     console.log(num2);
@@ -10,35 +10,36 @@ function calculate () {
 
 // class calculator 
     class calcClass {
-        constructor(numberOne, numberTwo, operators) {
+        constructor(numberOne, numberTwo) {
             this.numberOne = numberOne;
             this.numberTwo = numberTwo;
-            this.operators = operators;
+            //this.operators = operators;
             
         }
 
         getCalculate () {
-            return this.numberOne + this.operators + this.numberTwo;
+            return +this.numberOne +  +this.numberTwo; //this.operators +
         }
         
         
     };
 
 // const newNumberSumm = new calcClass(1, 2); // it is working
-const newNumberSumm = new calcClass(num1, num2, oper); // != it isnt working
+const newNumberSumm = new calcClass(num1, num2); // != it isnt working
 
 document.getElementById('result').value = newNumberSumm.getCalculate();
 
 console.log(num1);
 console.log(num2);
-console.log(oper);
+//console.log(oper);
 console.log(newNumberSumm.getCalculate());
 
 };
 
 
+//btn.addEventListener("click", calculate);
+const btn = document.getElementById('btn'); //
 btn.addEventListener("click", calculate);
-
 
 
 
