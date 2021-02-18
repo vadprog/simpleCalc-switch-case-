@@ -37,11 +37,11 @@ console.log(newNumberSumm.getCalculate());
 };
 
 
-//btn.addEventListener("click", calculate);
+//btn.addEventListener("click", calculate); // not correct
+//btn.addEventListener("click", newNumberSumm.getCalculate);// isnt working
+
 const btn = document.getElementById('btn'); //
 btn.addEventListener("click", calculate);
-
-
 
 
 //============================================================================
